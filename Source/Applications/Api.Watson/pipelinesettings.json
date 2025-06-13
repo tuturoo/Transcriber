@@ -1,0 +1,38 @@
+{
+    "SoxAudioTransformer": {
+        "ExecutablePath": "C:\\Users\\Anatoliy\\Desktop\\New\\Transcriber\\Examples\\StreamingTranscribeFromFile\\Assets\\Sox\\sox.exe",
+        "OutputRate": 16000,
+        "OutputAudioFormat": "raw",
+        "OutputDepth": 16,
+        "OutputChannelCount": 1,
+        "OutputEncodingType": "signed-integer",
+        "Normalize": {
+            "DecibelLevel": -0.5
+        },
+        "Compand": {
+            "TransferFunction": {
+                "Attack": 0.3,
+                "Decay": 1,
+                "DecibelTable": [ -90, -90, -70, -70, -60, -20, 0, 0 ]
+            },
+            "Gain": -5,
+            "InitialLevel": 0,
+            "Delay": 0.2
+        }
+    },
+    "SileroVoiceActivityDetector": {
+        "ModelPath": "C:\\Users\\Anatoliy\\Desktop\\New\\Transcriber\\Examples\\StreamingTranscribeFromFile\\Assets\\Models\\silero_vad.onnx",
+        "Threshold": 0.6,
+        "MinimalSpeechDurationMilliseconds": 150,
+        "MinimalSilenceDurationMilliseconds": 50,
+        "PadMilliseconds": 25
+    },
+    "WhisperSpeechRecognizer": {
+        "ModelPath": "C:\\Users\\Anatoliy\\Desktop\\New\\Transcriber\\Examples\\StreamingTranscribeFromFile\\Assets\\Models\\whisper-large-v3-russian.ggml",
+        "ThreadCount": 4,
+        "Language": "ru"
+    },
+    "ChunkedStreamingPipeline": {
+        "ChunkSizeMilliseconds": 1000
+    }
+}

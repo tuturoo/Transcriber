@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AspNetCore.Authentication.Basic" Version="9.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.WebSockets" Version="2.3.0" />
+		<PackageReference Include="NLog.Web.AspNetCore" Version="5.4.0" />
+		<PackageReference Include="System.Net.WebSockets" Version="4.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\AudioTransformers\AudioTransformers.Sox\AudioTransformers.Sox.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Pipelines\StreamingPipelines\StreamingPipelines.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\SpeechRecognizers\SpeechRecognizers.Whisper\SpeechRecognizers.Whisper.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\VoiceActivityDetectors\VoiceActivityDetectors.Silero\VoiceActivityDetectors.Silero.csproj" />
+  </ItemGroup>
+
+</Project>
